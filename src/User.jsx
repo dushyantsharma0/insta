@@ -20,7 +20,7 @@ const User = () => {
     if(name==""){
       alert("Please enter your name")
     }else{
-      fetch("https://instaapinew.vercel.app/usersave", {
+      fetch("https://fewdemo.vercel.app/usersave", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

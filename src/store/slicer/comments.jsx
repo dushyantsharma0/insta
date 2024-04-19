@@ -7,9 +7,9 @@ const Comments = (props) => {
 
 // use post method in fetch 
 const [text , setText] = useState("");
-  function sendComment(){
-   if(text!=""){
-    fetch('https://instaapinew.vercel.app/comment', {
+function sendComment() {
+  if (text !== "") {
+    fetch('https://fewdemo.vercel.app/comment', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -20,26 +20,25 @@ const [text , setText] = useState("");
         post: props.values._id
       })
     })
-   .then(res => res.json())
-   .then(data => {
-    fetch('https://instaapinew.vercel.app/posts', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        title: props.values.title,
-        comment:data._id
-        
+      .then(res => res.json())
+      .then(data => {
+        fetch('https://fewdemo.vercel.app/posts', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            title: props.values.title,
+            comment: data._id
+          })
+        })
       })
-    })
-    })
-   .catch(err => console.log(err))
+      .catch(err => console.log(err))
     setText('')
-   }else{
+  } else {
     alert("Please enter a comment")
-   }
   }
+}
  navigation=useNavigate()
 function back(){
   navigation('/')

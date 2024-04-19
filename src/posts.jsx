@@ -34,7 +34,7 @@ const [val , setVal] = useState();
     }
   
       try {
-        const response = await fetch("https://instaapinew.vercel.app/showposts");
+        const response = await fetch("https://fewdemo.vercel.app/api/products/showposts");
         if (response.ok) {
           const data = await response.json();
           const newtitles = data.map((res) => res); // Map the 'author.name' from the data
@@ -54,7 +54,7 @@ const [val , setVal] = useState();
   // todo: get your data only 
   const fetchYourData = async () => {
     try {
-      const response = await fetch("https://instaapinew.vercel.app/yourpost", {
+      const response = await fetch("https://fewdemo.vercel.app/yourpost", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -75,7 +75,7 @@ const [val , setVal] = useState();
   // todo: get all data 
    async function allpost(){
     try {
-      const response = await fetch("https://instaapinew.vercel.app/showposts");
+      const response = await fetch("https://fewdemo.vercel.app/api/products/showposts");
       if (response.ok) {
         const data = await response.json();
         const newtitles = data.map((res) => res); // Map the 'author.name' from the data
@@ -92,7 +92,7 @@ const [val , setVal] = useState();
 
   async function otherpost() {
     try {
-      const response = await fetch("https://instaapinew.vercel.app/otherdata", {
+      const response = await fetch("https://fewdemo.vercel.app/otherdata", {
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -136,7 +136,7 @@ const [setId, setsetId] = useState();
      
       
       // like ko fetch karna hai  
-      fetch("https://instaapinew.vercel.app/like",{
+      fetch("https://fewdemo.vercel.app/like",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -147,7 +147,7 @@ const [setId, setsetId] = useState();
         })
       }).then((response) => {
         response.json().then((data) => {
-           fetch('https://instaapinew.vercel.app/posts',{
+           fetch('https://fewdemo.vercel.app/posts',{
             method: 'POST',
             headers: {
               'Content-Type': 'application/json'
@@ -172,7 +172,7 @@ const [setId, setsetId] = useState();
     }
     function unlike(event){
 
-      fetch("https://instaapinew.vercel.app/like",{
+      fetch("https://fewdemo.vercel.app/like",{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
@@ -248,7 +248,7 @@ const [setId, setsetId] = useState();
     const [special , setSpecial] = useState(true);
      async function getsingleuser(name) {
       try {
-        const response = await fetch("https://instaapinew.vercel.app/yourpost", {
+        const response = await fetch("https://fewdemo.vercel.app/yourpost", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
