@@ -1,0 +1,87 @@
+#root {
+  max-width: 1280px;
+  
+ 
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+.removescroll::-webkit-scrollbar{
+display: none;
+}
+.black{
+  font-size: 150px;
+}
+.changescroll::-webkit-scrollbar{
+  height: 10px;
+  width: 3px;
+  background: red;
+  border-radius: 10px;
+}
+.changescroll::-webkit-scrollbar-thumb{
+  border-radius: 10px;
+  background-color: rgb(84, 190, 174);
+}
+
+.bgadd::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ 
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Rotating_earth_%28large%29.gif/200px-Rotating_earth_%28large%29.gif');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1; /* Adjust the opacity value as needed */
+  z-index: -1;
+}
+.bgadd2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+ 
+  height: 100%;
+  background-image: url('https://media3.giphy.com/media/gFhZjOtzoutSvckWPM/200.webp?cid=790b7611n6ic3ir8420nqx625ux014ore2h4cufvi9yxdw6z&ep=v1_gifs_search&rid=200.webp&ct=g');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.1; /* Adjust the opacity value as needed */
+  z-index: -1;
+}
