@@ -8,6 +8,13 @@ import  {useDispatch, useSelector } from 'react-redux'
 import { self } from './store/slicer/userSlicer';
 import { BiSolidLike } from "react-icons/bi";
 const Posts = () => {
+
+
+
+
+
+
+
   // todo usestate ka use 
    const data=useSelector(state => state.user)
   // todo  useDispatch ka use 
@@ -273,9 +280,20 @@ const [setId, setsetId] = useState();
      function back(){
           location.reload()
      }
+
+
+     function logout(){
+    
+      localStorage.removeItem('username')
+      localStorage.removeItem('id')
+       location.reload()
+    }
+
   return (
     <div>
       <div >
+      <button onClick={logout}  style={{ zIndex:"1000", background: "green", position: "fixed", top: "10px", right: "0px", transform: "translate(-50%)" }}  >LogOut</button>
+
      {special? <>
       <h1 style={{ background: "black", position: "fixed", top: "40px", left: "50%", transform: "translate(-50%)" }}>
   welcome dear <span style={{ color: "red" }}>{localStorage.getItem('username')}</span>
@@ -290,12 +308,15 @@ const [setId, setsetId] = useState();
      <h1 style={{ width:"100%",height:"100px", paddingTop:"20px",  background: "black", position: "fixed", top: "-40px", left: "50%", transform: "translate(-50%)" }}>
 <span style={{ color: "red" }}>{specialname}</span>   :        All Post 
 </h1>
-<button onClick={back}  style={{position:"absolute", top:"20px", left:"20px", backgroundColor:"#ddd", color:"black" }}>back</button>
+<button onClick={back}  style={{position:"fixed", top:"20px", left:"20px", backgroundColor:"#ddd", color:"black" }}>back</button>
 <div style={{ background: "", marginTop:"150px" , marginBottom:"-100px", paddingLeft:"45%", textAlign:'justify'  }}  >
   <p style={{fontSize:"2rem",lineHeight:"0.1rem"  }} >name: &nbsp; <span style={{color:"skyblue"}} >{specialname}</span> </p>
   <p style={{fontSize:"2rem",lineHeight:"0.1rem"  }}>total post: &nbsp; <span style={{color:"orange"}} > {titel.length} </span> </p>
   <p style={{fontSize:"1rem",lineHeight:"0.1rem",color:"red"  }}>about  &nbsp;  </p>
-  <span style={{fontSize:"2rem",lineHeight:"0.1rem", color:"green"}} > {titel[0].author.bio}</span>
+  <p style={{ marginTop:'-10px',  fontSize:"1.4rem", color:"green"}} >
+  
+     {titel[0].author.bio}</p>
+     
 </div>
      </>       }      
 
