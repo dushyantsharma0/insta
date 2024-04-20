@@ -326,7 +326,7 @@ const [setId, setsetId] = useState();
      {all? 
            titel.map((title, index) => {
           
-          return <div onMouseEnter={()=>setvalues(title)}  style={{ paddingBottom:"40px", position:"relative", margin:"20px", width:"500px", height:"max-content", backgroundColor:'#ddd',
+          return <div onMouseEnter={()=>setvalues(title)} onTouchStart={()=>setvalues(title)}  style={{ paddingBottom:"40px", position:"relative", margin:"20px", width:"500px", height:"max-content", backgroundColor:'#ddd',
            color:'black'}}  key={index}>
                 <div  style={{display:'flex', justifyContent:'center', width:"100%", gap:"5px", paddingTop:"10px", alignItems:"center"  }}>
                   
@@ -342,7 +342,7 @@ const [setId, setsetId] = useState();
             <h2 style={{color:"#1f82f6"}}> <span style={{color:"darkorange", fontWeight:"900" }} >titel : </span>{title.title}</h2>
             <h3 style={{color:"#9e7d1c"}} >content </h3>
             <p>{title.content}</p>
-            <FaRegComment   onMouseEnter={()=>setVal(title)}  onClick={()=>setComment(true)}  style={{ fontSize:"20px", cursor:"pointer", position:"absolute", right:"10%"}}/>
+            <FaRegComment onTouchStart={()=>setVal(title)}   onMouseEnter={()=>setVal(title)}   onClick={()=>setComment(true)}  style={{ fontSize:"20px", cursor:"pointer", position:"absolute", right:"10%"}}/>
                    <p  style={{position:"absolute"  , right:"50px", fontWeight:"900" }} > {title.comment.length} </p>        
                    {title.like ? <p style={{position:'absolute', left:"50%" }} >{title.like.users.length}</p> : null}
                    {title.like ?
@@ -351,15 +351,15 @@ const [setId, setsetId] = useState();
           
           if (resp._id == localStorage.getItem('id')) {
             console.log(resp._id)
-                      return <BiSolidLike key={i} className='black' onClick={unlike}  onMouseEnter={()=>setlike(title._id)}   style={{ zIndex:"100", position:'absolute', left:"50%" , cursor:"pointer", color: "red", fontSize: "20px" }} />             
+                      return <BiSolidLike key={i} className='black' onClick={unlike} onTouchStart={()=>setlike(title._id)}  onMouseEnter={()=>setlike(title._id)}   style={{ zIndex:"100", position:'absolute', left:"50%" , cursor:"pointer", color: "red", fontSize: "20px" }} />             
           }else{
 
           }
                
         })
-        :    <BiSolidLike className='black' onMouseEnter={()=>setlike(title._id)}  onClick={like} style={{position:'absolute', left:"50%" , cursor:"pointer", color: "black", fontSize: "20px" }} /> 
+        :    <BiSolidLike className='black' onMouseEnter={()=>setlike(title._id)}  onTouchStart={()=>setlike(title._id)}  onClick={like} style={{position:'absolute', left:"50%" , cursor:"pointer", color: "black", fontSize: "20px" }} /> 
       }
-                 <BiSolidLike className='black' onMouseEnter={()=>setlike(title._id)}  onClick={like} style={{position:'absolute', left:"50%" , cursor:"pointer", color: "black", fontSize: "20px" }} /> 
+                 <BiSolidLike className='black' onMouseEnter={()=>setlike(title._id)} onTouchStart={()=>setlike(title._id)}  onClick={like} style={{position:'absolute', left:"50%" , cursor:"pointer", color: "black", fontSize: "20px" }} /> 
 
                              </div>
                   
