@@ -15,8 +15,8 @@ function App() {
     <>
     <Router>
       <Routes>
-       <Route path="/" element={<User />} />
-      <Route path="/home" element={<Posts />} />
+       <Route path="/home" element={<User />} />
+      <Route path="/" element={<Posts />} />
       <Route path="*" element={<h1>page not found</h1>} />
      
       </Routes>

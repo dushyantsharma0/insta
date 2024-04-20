@@ -12,12 +12,12 @@ const User = () => {
   useEffect(() => {
     const storedUsername = localStorage.getItem('username');
     if (storedUsername) {
-      navigate('/home')
+      navigate('/')
     }
   }, [namesend])
 
   function namesend(){
-    if(name==""){
+    if(name==""&&content==""){
       alert("Please enter your name")
     }else{
       fetch("https://fewdemo.vercel.app/usersave", {
@@ -36,7 +36,7 @@ const User = () => {
         alert(data.msg)
       }else{
         localStorage.setItem("id", data._id)
-        navigate('/home')
+        navigate('/')
           localStorage.setItem("username", name)
       }
      })
@@ -44,7 +44,7 @@ const User = () => {
      setName("")
    
      setTimeout(() => {
-      navigate("/home");
+      navigate("/");
       
      }, 100);
     }

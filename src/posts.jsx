@@ -30,7 +30,7 @@ const [val , setVal] = useState();
     const fetchData = async () => {
       const storedUsername = localStorage.getItem('username');
     if (!storedUsername) {
-      navigate('/')
+      navigate('/home')
     }
   
       try {
@@ -271,7 +271,7 @@ const [setId, setsetId] = useState();
     }
       
      function back(){
-navigate('/')
+          location.reload()
      }
   return (
     <div>

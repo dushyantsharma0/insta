@@ -41,7 +41,7 @@ function sendComment() {
 }
  navigation=useNavigate()
 function back(){
-  navigation('/')
+ location.reload()
   
 }
 
