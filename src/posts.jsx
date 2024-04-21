@@ -292,24 +292,24 @@ const [setId, setsetId] = useState();
   return (
     <div>
       <div >
-      <button onClick={logout}  style={{ zIndex:"1000", background: "green", position: "fixed", top: "10px", right: "0px", transform: "translate(-50%)" }}  >LogOut</button>
+      <button className='logoutbtn' onClick={logout}  style={{ zIndex:"1000", background: "green", position: "fixed", transform: "translate(-50%)" }}  >LogOut</button>
 
      {special? <>
-      <h1 style={{ background: "black", position: "fixed", top: "40px", left: "50%", transform: "translate(-50%)" }}>
+      <h1 className='welcome' style={{ background: "black", position: "fixed", top: "40px", left: "50%", transform: "translate(-50%)" }}>
   welcome dear <span style={{ color: "red" }}>{localStorage.getItem('username')}</span>
 </h1>
-<div style={{ position: "fixed", top: "10px", left: "50%", transform: "translate(-50%)" }}>
-<button  onClick={fetchYourData}  style={{ background: "black", marginLeft:"10px", top: "10px"}} >Your post</button> 
-<button onClick={allpost} style={{ background: "black", marginLeft:"10px", top: "10px"  }} >All post</button>
-<button onClick={otherpost} style={{ background: "black", marginLeft:"10px", top: "10px" }} >other post</button> 
+<div className='mainbtn' style={{ position: "fixed", top: "10px", left: "50%", transform: "translate(-50%)" }}>
+<button className='btns'  onClick={fetchYourData}  style={{  marginLeft:"10px", top: "10px"}} >Your post</button> 
+<button className='btns'   onClick={allpost} style={{  marginLeft:"10px", top: "10px"  }} >All post</button>
+<button className='btns'   onClick={otherpost} style={{  marginLeft:"10px", top: "10px" }} >other post</button> 
 </div>
      
      </>    :<>
-     <h1 style={{ width:"100%",height:"100px", paddingTop:"20px",  background: "black", position: "fixed", top: "-40px", left: "50%", transform: "translate(-50%)" }}>
+     <h1 className='allpostpersonal' style={{ width:"100%",height:"100px",   background: "black", position: "fixed", top: "-40px", left: "50%", transform: "translate(-50%)" }}>
 <span style={{ color: "red" }}>{specialname}</span>   :        All Post 
 </h1>
-<button onClick={back}  style={{position:"fixed", top:"20px", left:"20px", backgroundColor:"#ddd", color:"black" }}>back</button>
-<div style={{ background: "", marginTop:"150px" , marginBottom:"-100px", paddingLeft:"45%", textAlign:'justify'  }}  >
+<button className='backbtn' onClick={back}  style={{position:"fixed",  backgroundColor:"#ddd", color:"black" }}>back</button>
+<div className='personaldetail'  style={{ background: "", marginBottom:"-100px",  }}  >
   <p style={{fontSize:"2rem",lineHeight:"0.1rem"  }} >name: &nbsp; <span style={{color:"skyblue"}} >{specialname}</span> </p>
   <p style={{fontSize:"2rem",lineHeight:"0.1rem"  }}>total post: &nbsp; <span style={{color:"orange"}} > {titel.length} </span> </p>
   <p style={{fontSize:"1rem",lineHeight:"0.1rem",color:"red"  }}>about  &nbsp;  </p>
